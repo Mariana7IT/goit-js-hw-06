@@ -1,7 +1,8 @@
 "use strict";
 
 // Створи клас Storage, який створюватиме об'єкти для управління складом товарів.
-// Клас очікує лише один аргумент — початковий масив товарів, який записується до створеного об'єкта в приватну властивість items.
+// Клас очікує лише один аргумент — початковий масив товарів,
+// який записується до створеного об'єкта в приватну властивість items.
 
 // Оголоси наступні методи класу:
 
@@ -23,6 +24,25 @@
 // Другий виклик storage.getItems() після виклику storage.addItem("Droid") повертає масив ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
 // Третій виклик storage.getItems() після виклику storage.removeItem("Prolonger") повертає масив ["Nanitoids", "Antigravitator", "Droid"]
 // Четвертий виклик storage.getItems() після виклику storage.removeItem("Scaner") повертає масив ["Nanitoids", "Antigravitator", "Droid"]
+
+class Storage {
+    #items;
+    constructor(items) {
+        this.#items = items
+    }
+
+    getItems() {
+        return this.#items;
+    }
+
+    addItem(newItem) {
+        this.#items = newItems;
+    }
+
+    removeItem(itemToRemove) {
+         this.#items = this.#items.filter(item => item !== itemToRemove);
+    }
+}
 
 const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
